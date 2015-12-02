@@ -1,0 +1,25 @@
+<template name='home'>
+
+  <div class="container">
+    <div class="section">
+      <!--   Icon Section   -->
+      <div class="row">
+        <h1>Let's make books ({{bookCount}})</h1>
+        {{> quickForm id='insertBookForm' collection='Books' type='insert'}}
+      </div>
+
+    </div>
+
+    <div class='section'>
+      {{#each books}}
+        <div class='row'>
+          <h3>{{title}}</h3>
+          {{> quickForm id=this._id collection='Books' type='readonly' doc=this}}
+        </div>
+      {{/each}}
+    </div>
+    <br><br>
+
+  </div>
+
+</template>
