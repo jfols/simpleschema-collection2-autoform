@@ -3,14 +3,19 @@
   <div class="row">
 
     <div class='col s6'>
-      <h1>Let's make books ({{bookCount}})</h1>
+      <h2>Let's make books ({{bookCount}})</h2>
       {{> quickForm id='insertBookForm' collection='Books' type='insert' omitFields='timeCreated'}}
     </div>
 
     <div class='col s6'>
-      {{#each books}}
-        {{> editBook}}
-      {{/each}}
+      <h2>All the books</h2>
+      {{#if isHaveBooks}}
+        {{#each books}}
+          {{> editBook}}
+        {{/each}}
+      {{else}}
+        You have zero books...
+      {{/if}}
     </div>
 
   </div>
