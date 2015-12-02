@@ -5,8 +5,9 @@
       <!--   Icon Section   -->
       <div class="row">
         <h1>Let's make books ({{bookCount}})</h1>
-        {{> quickForm id='insertBookForm' collection='Books' type='insert'}}
+        {{> quickForm id='insertBookForm' collection='Books' type='insert' omitFields='timeCreated'}}
       </div>
+      <hr>
 
     </div>
 
