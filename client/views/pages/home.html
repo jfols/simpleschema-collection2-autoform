@@ -7,7 +7,6 @@
         <h1>Let's make books ({{bookCount}})</h1>
         {{> quickForm id='insertBookForm' collection='Books' type='insert' omitFields='timeCreated'}}
       </div>
-      <hr>
 
     </div>
 
@@ -15,7 +14,7 @@
       {{#each books}}
         <div class='row'>
           <h3>{{title}}</h3>
-          {{> quickForm id=this._id collection='Books' type='readonly' doc=this}}
+          {{> quickForm id=this._id collection='Books' type='update' doc=this buttonContent='update'}}
           {{# quickRemoveButton collection='Books' _id=this._id class='waves-effect waves-light btn red'}}
             <i class="material-icons left">delete</i>Delete
           {{/quickRemoveButton}}
