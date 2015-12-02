@@ -1,27 +1,17 @@
 <template name='home'>
 
-  <div class="container">
-    <div class="section">
-      <!--   Icon Section   -->
-      <div class="row">
-        <h1>Let's make books ({{bookCount}})</h1>
-        {{> quickForm id='insertBookForm' collection='Books' type='insert' omitFields='timeCreated'}}
-      </div>
+  <div class="row">
 
+    <div class='col s6'>
+      <h1>Let's make books ({{bookCount}})</h1>
+      {{> quickForm id='insertBookForm' collection='Books' type='insert' omitFields='timeCreated'}}
     </div>
 
-    <div class='section'>
+    <div class='col s6'>
       {{#each books}}
-        <div class='row'>
-          <h3>{{title}}</h3>
-          {{> quickForm id=this._id collection='Books' type='update' doc=this buttonContent='update'}}
-          {{# quickRemoveButton collection='Books' _id=this._id class='waves-effect waves-light btn red'}}
-            <i class="material-icons left">delete</i>Delete
-          {{/quickRemoveButton}}
-        </div>
+        {{> editBook}}
       {{/each}}
     </div>
-    <br><br>
 
   </div>
 

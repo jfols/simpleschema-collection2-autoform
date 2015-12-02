@@ -1,0 +1,7 @@
+<template name='editBook'>
+  <h3>{{title}}</h3>
+  {{> quickForm id=this._id collection='Books' type='update' doc=this buttonContent='update'}}
+  {{# quickRemoveButton collection='Books' _id=this._id class='waves-effect waves-light btn red'}}
+    <i class="material-icons left">delete</i>Delete
+  {{/quickRemoveButton}}
+</template>
